@@ -21,7 +21,7 @@ function Model({ open, hinge, link, ...props }) {
   const modelRef = useRef();
   const linkRef = useRef();
   // Load model
-  const { nodes, materials } = useGLTF("public/models/3d/mac-draco.glb");
+  const { nodes, materials } = useGLTF("public/models/3d/mac_draco.glb");
   // Take care of cursor state on hover
   const [hovered, setHovered] = useState(false);
   useEffect(
@@ -151,7 +151,7 @@ function Model({ open, hinge, link, ...props }) {
     </group>
   );
 }
-useGLTF.preload("public/models/3d/mac-draco.glb");
+useGLTF.preload("public/models/3d/mac_draco.glb");
 export default function App({ link }) {
   // This flag controls open state, alternates between true & false
   const [open, setOpen] = useState(true);
