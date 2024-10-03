@@ -1,8 +1,8 @@
-import { BrowserRouter as Router } from 'react-router-dom'
-import Intro from './sections/Intro.jsx';
-import NavBar from './components/NavBar.jsx';
-import TechStack from './sections/Skills.jsx';
-import Projects from './sections/Projects.jsx';
+import { BrowserRouter as Router } from "react-router-dom";
+import NavBar from "./components/NavBar.jsx";
+import Intro from "./sections/Intro.jsx";
+import Projects from "./sections/Projects.jsx";
+import TechStack from "./sections/Skills.jsx";
 const App = () => {
   return (
     <Router>

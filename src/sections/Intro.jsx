@@ -1,19 +1,12 @@
 import { useGSAP } from "@gsap/react";
-import {
-  OrbitControls,
-  PerspectiveCamera,
-  Sparkles,
-  useGLTF,
-} from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import gsap from "gsap";
 import React, { Suspense, useEffect, useRef } from "react";
-import Aquarium from "../components/Aquarium.jsx";
-import RoboticsPlayground from "../components/RoboticsPlayground.jsx";
-import CanvasLoader from "../components/Loading.jsx";
-import ModelViewer from "../components/GltfModel.jsx";
-import useSize from "../hooks/useSize.jsx";
 import { Link } from "react-router-dom";
+import CanvasLoader from "../components/Loading.jsx";
+import RoboticsPlayground from "../components/RoboticsPlayground.jsx";
+import useSize from "../hooks/useSize.jsx";
 export default function Intro() {
   const videoRef = useRef(null);
   const heroTagRef = useRef(null);

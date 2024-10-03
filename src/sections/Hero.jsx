@@ -1,15 +1,15 @@
-import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { useMediaQuery } from "react-responsive";
 
-import { OrbitControls } from '@react-three/drei';
-import { useState } from 'react';
-import Developer from '../components/Developer.jsx';
-import CanvasLoader from '../components/Loading.jsx';
-import { calculateSizes } from '../constants/index.js';
+import { OrbitControls } from "@react-three/drei";
+import { useState } from "react";
+import Developer from "../components/Developer.jsx";
+import CanvasLoader from "../components/Loading.jsx";
+import { calculateSizes } from "../constants/index.js";
 
 const Hero = () => {
-  const [animationName, setAnimationName] = useState('idle');
+  const [animationName, setAnimationName] = useState("idle");
   // Use media queries to determine screen size
   const isSmall = useMediaQuery({ maxWidth: 440 });
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -19,7 +19,6 @@ const Hero = () => {
 
   const handleAnimationChange = (name) => {
     setAnimationName(name);
-    console.log('animationName', animationName);
   };
 
   return (
@@ -28,7 +27,9 @@ const Hero = () => {
         <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
           Hi, I am Soab
         </p>
-        <p className="hero_tag text-gray_gradient">Building 3d Products & Brands</p>
+        <p className="hero_tag text-gray_gradient">
+          Building 3d Products & Brands
+        </p>
       </div>
 
       <div className="experience absolute inset-0">
@@ -39,25 +40,27 @@ const Hero = () => {
           <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
           <Suspense fallback={<CanvasLoader />}>
-            <Developer position-y={-2.5} scale={2} animationName={animationName} />
+            <Developer
+              position-y={-2.5}
+              scale={2}
+              animationName={animationName}
+            />
           </Suspense>
         </Canvas>
-
       </div>
       <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
         <div className="flex justify-center space-x-4">
-          {['Idle', 'Salute', 'Clapping', 'Victory'].map((name) => (
+          {["Idle", "Salute", "Clapping", "Victory"].map((name) => (
             <button
               key={name}
               onClick={() => handleAnimationChange(name.toLowerCase())}
               onPointerOver={() => handleAnimationChange(name.toLowerCase())}
-              onPointerOut={() => handleAnimationChange('idle')}
-              className={`${animationName === name.toLowerCase() ? 'text-white' : 'text-gray-400'} text-xl font-generalsans`}
+              onPointerOut={() => handleAnimationChange("idle")}
+              className={`${animationName === name.toLowerCase() ? "text-white" : "text-gray-400"} text-xl font-generalsans`}
             >
               {name}
             </button>
           ))}
-
         </div>
       </div>
     </section>
