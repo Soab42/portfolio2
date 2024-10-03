@@ -44,7 +44,7 @@ export default function MacDraco({ link }) {
               link={link}
             />
           </group>
-          <Environment preset="dawn" />
+          {/* <Environment preset="dawn" /> */}
         </Suspense>
         <ContactShadows
           position={[0, -4.5, 0]}
