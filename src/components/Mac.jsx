@@ -151,7 +151,7 @@ function Model({ open, hinge, link, ...props }) {
     </group>
   );
 }
-useGLTF.preload("/mac.glb");
+useGLTF.preload("public/models/3d/mac-draco.glb");
 export default function App({ link }) {
   // This flag controls open state, alternates between true & false
   const [open, setOpen] = useState(true);
