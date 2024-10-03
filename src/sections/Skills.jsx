@@ -2,9 +2,10 @@ import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef } from "react";
 import CanvasLoader from "../components/Loading";
+import ScifiFan from "../components/ScifiFan";
 import TechCard from "../components/TechCard";
 import { techStack } from "../constants";
-import ModelViewer from "../components/GltfModel";
+
 export default function TechStack() {
   const groupRef = useRef(null);
   return (
@@ -41,11 +42,8 @@ export default function TechStack() {
               scale={1.2}
               ref={groupRef}
             >
-              <ModelViewer
-                modelPath={"public/models/3d/scifi_fan_convector_heater.glb"}
-                position={[0, 0, 1]}
-                rotation={[-1.6, 0, 0]}
-              />
+              <ScifiFan position={[0, 0, 1]} rotation={[-1.6, 0, 0]} />
+
               {techStack.map((tech, index) => {
                 const angle = (index / techStack.length) * Math.PI * 2; // Calculate based on techStack length
                 const radius = 2;

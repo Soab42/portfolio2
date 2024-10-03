@@ -42,7 +42,7 @@ export default function TechCard(props) {
             />
             <Text
               fontSize={0.12}
-              color="yellow"
+              color="skyblue"
               position={[0, 0, 0.2]}
               rotation={[-Math.PI / 2, 0, 0]}
               text={props.title}
