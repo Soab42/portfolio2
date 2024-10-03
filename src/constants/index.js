@@ -46,82 +46,82 @@ export const techStack = [
     description:
       "Css is a styling language for building user interfaces. It is maintained by Meta and a community of developers.",
     skill: "100%",
-    image: "public/icon/icons8-css-480.png",
+    image: "icon/icons8-css-480.png",
   },
   {
     title: "JavaScript",
     description:
       "JavaScript is a scripting language for building user interfaces. It is maintained by Meta and a community of developers.",
     skill: "100%",
-    image: "public/icon/icons8-javascript-480.png",
+    image: "icon/icons8-javascript-480.png",
   },
   {
     title: "React",
     description:
       "React is a JavaScript library for building user interfaces. It is maintained by Meta and a community of developers.",
     skill: "100%",
-    image: "public/icon/icons8-react-native-480.png",
+    image: "icon/icons8-react-native-480.png",
   },
   {
     title: "Next.js",
     description:
       "Next.js is a JavaScript library for building user interfaces. It is maintained by Meta and a community of developers.",
     skill: "100%",
-    image: "public/icon/icons8-nextjs-240.png",
+    image: "icon/icons8-nextjs-240.png",
   },
   {
     title: "Tailwind",
     description:
       "Tailwind is a CSS framework for building user interfaces. It is maintained by Meta and a community of developers.",
     skill: "100%",
-    image: "public/icon/icons8-tailwind-css-480.png",
+    image: "icon/icons8-tailwind-css-480.png",
   },
   {
     title: "Node.js",
     description:
       "Node.js is a JavaScript runtime for building server-side applications.",
     skill: "100%",
-    image: "public/icon/icons8-nodejs-480.png",
+    image: "icon/icons8-nodejs-480.png",
   },
   {
     title: "MongoDB",
     description:
       "MongoDB is a NoSQL database for building user interfaces. It is maintained by Meta and a community of developers.",
     skill: "100%",
-    image: "public/icon/icons8-mongo-db-96.png",
+    image: "icon/icons8-mongo-db-96.png",
   },
 
   {
     title: "MySQL",
     description: "MySQL is a relational database management system.",
     skill: "100%",
-    image: "public/icon/icons8-mysql-500.png",
+    image: "icon/icons8-mysql-500.png",
   },
   {
     title: "PHP",
     description:
       "PHP is a server-side scripting language for building web applications.",
     skill: "100%",
-    image: "public/icon/icons8-php-512.png",
+    image: "icon/icons8-php-512.png",
   },
   {
     title: "Laravel",
     description: "Laravel is a PHP framework for building web applications.",
     skill: "100%",
-    image: "public/icon/icons8-laravel-96.png",
+    image: "icon/icons8-laravel-96.png",
   },
   {
     title: "Flutter",
     description:
       "Flutter is a UI software development kit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
     skill: "100%",
-    image: "public/icon/icons8-flutter-240.png",
+    image: "icon/icons8-flutter-240.png",
   },
   {
     title: "Three.js",
     description: "Three.js is a JavaScript library for creating 3D graphics.",
     skill: "100%",
-    image: "public/icon/three.png",
+    image: "icon/three.png",
   },
 ];
 
@@ -145,7 +145,7 @@ export const projects = [
     technology: ["React", "Tailwind", "Three.js"],
     link: "https://hotelloans.vercel.app",
     github: "https://github.com/soab42/hotelloans",
-    icon: "public/portfolio.png",
+    icon: "portfolio.png",
   },
   {
     title: "Portfolio",
@@ -154,6 +154,6 @@ export const projects = [
     technology: ["React", "Tailwind", "Three.js"],
     link: "https://syfuddhin.netlify.app",
     github: "https://github.com/soab42/portfolio",
-    icon: "public/portfolio.png",
+    icon: "portfolio.png",
   },
 ];

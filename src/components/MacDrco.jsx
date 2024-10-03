@@ -5,10 +5,13 @@ import { ContactShadows, Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useState } from "react";
 import useSize from "../hooks/useSize";
-export default function App({ link }) {
+import CanvasLoader from "./Loading";
+import Mac from "./Mac";
+export default function MacDraco({ link }) {
   // This flag controls open state, alternates between true & false
   const [open, setOpen] = useState(true);
   const { isMobile, isTablet } = useSize();
+
   // We turn this into a spring animation that interpolates between 0 and 1
   const props = useSpring({ open: Number(open) });
   return (
@@ -26,7 +29,7 @@ export default function App({ link }) {
         />
 
         {/* <OrbitControls /> */}
-        <Suspense fallback={null}>
+        <Suspense fallback={<CanvasLoader />}>
           <group
             rotation={[0, Math.PI, 0]}
             onClick={(e) => (e.stopPropagation(), setOpen(!open))}
@@ -41,8 +44,8 @@ export default function App({ link }) {
               link={link}
             />
           </group>
+          <Environment preset="dawn" />
         </Suspense>
-        <Environment preset="dawn" />
         <ContactShadows
           position={[0, -4.5, 0]}
           opacity={0.4}

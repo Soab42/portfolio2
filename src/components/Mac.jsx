@@ -1,21 +1,12 @@
-import * as THREE from "three";
-import React, { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import {
-  Environment,
-  useGLTF,
-  ContactShadows,
-  Html,
-  OrbitControls,
-} from "@react-three/drei";
-import { useSpring } from "@react-spring/core";
 import { a as three } from "@react-spring/three";
-import { a as web } from "@react-spring/web";
-import { useGSAP } from "@gsap/react";
+import { Html, useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
 import useSize from "../hooks/useSize";
 
-function Model({ open, hinge, link, ...props }) {
+export default function Mac({ open, hinge, link, ...props }) {
   const { isMobile, isTablet } = useSize();
   const group = useRef();
   const modelRef = useRef();
@@ -28,8 +19,7 @@ function Model({ open, hinge, link, ...props }) {
     () => void (document.body.style.cursor = hovered ? "pointer" : "auto"),
     [hovered]
   );
-  // hinge={props.open.to([0, 1], [1.575, -0.425])}
-  // console.log(hinge);
+
   // Make it float in the air when it's opened
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -151,54 +141,5 @@ function Model({ open, hinge, link, ...props }) {
     </group>
   );
 }
+
 useGLTF.preload("public/models/3d/mac_draco.glb");
-export default function App({ link }) {
-  // This flag controls open state, alternates between true & false
-  const [open, setOpen] = useState(true);
-  const { isMobile, isTablet } = useSize();
-
-  // We turn this into a spring animation that interpolates between 0 and 1
-  const props = useSpring({ open: Number(open) });
-  return (
-    <web.main
-      className="h-full"
-      style={{
-        background: props.open.to([0, 1], ["#fff0", "rgba(14, 165, 233,.3)"]),
-      }}
-    >
-      <Canvas dpr={[1, 2]} camera={{ position: [-10, 0, -30], fov: 35 }}>
-        <three.pointLight
-          position={[10, 10, 10]}
-          intensity={0}
-          color={props.open.to([0, 1], ["#f0f0f0", "#d25578"])}
-        />
-
-        {/* <OrbitControls /> */}
-        <Suspense fallback={null}>
-          <group
-            rotation={[0, Math.PI, 0]}
-            onClick={(e) => (e.stopPropagation(), setOpen(!open))}
-          >
-            <Model
-              scale={1}
-              position={
-                isMobile ? [5, -3, 10] : isTablet ? [4, -3, 10] : [0, -3, 0]
-              }
-              open={open}
-              hinge={props.open.to([0, 1], [1.575, -0.425])}
-              link={link}
-            />
-          </group>
-        </Suspense>
-        <Environment preset="dawn" />
-        <ContactShadows
-          position={[0, -4.5, 0]}
-          opacity={0.4}
-          scale={20}
-          blur={1.75}
-          far={4.5}
-        />
-      </Canvas>
-    </web.main>
-  );
-}

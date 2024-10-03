@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Mac from "../components/Mac";
 import { getTech, projects } from "../constants";
 
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
+import MacDraco from "../components/MacDrco";
 export default function ProjectsList() {
   const [project, setProject] = useState(0);
   const parentRef = useRef(null); // Reference to the parent container
@@ -119,7 +119,7 @@ export default function ProjectsList() {
           </div>
         </div>
         <div className="w-full xl:h-full h-1/2 order-1">
-          <Mac link={projects[project]?.link} />
+          <MacDraco link={projects[project]?.link} />
         </div>
       </div>
     </section>
