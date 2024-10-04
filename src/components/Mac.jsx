@@ -12,7 +12,7 @@ export default function Mac({ open, hinge, link, ...props }) {
   const modelRef = useRef();
   const linkRef = useRef();
   // Load model
-  const { nodes, materials } = useGLTF("public/models/3d/mac_draco.glb");
+  const { nodes, materials } = useGLTF("/models/3d/mac_draco.glb");
   // Take care of cursor state on hover
   const [hovered, setHovered] = useState(false);
   useEffect(
@@ -142,4 +142,4 @@ export default function Mac({ open, hinge, link, ...props }) {
   );
 }
 
-useGLTF.preload("public/models/3d/mac_draco.glb");
+useGLTF.preload("/models/3d/mac_draco.glb");
