@@ -38,7 +38,7 @@ export default function TechCard(props) {
               position={[0, 0, 0.2]}
               rotation={[-Math.PI / 2, 0, 0]}
               text={props.title}
-              font="public/font/SuperchargeLaser-9YZjj.otf"
+              font="/font/SuperchargeLaser-9YZjj.otf"
             >
               <meshPhongMaterial emissive="skyblue" emissiveIntensity={0.8} />
               <pointLight position={[0, 0, 1]} intensity={1} color="skyblue" />
@@ -50,7 +50,7 @@ export default function TechCard(props) {
               rotation={[-1.6, 0, 0]}
               text={props.description}
               maxWidth={1}
-              font="public/font/XerodaRegular-p7dwr.otf"
+              font="/font/XerodaRegular-p7dwr.otf"
             />
             <Text
               fontSize={0.16}
@@ -59,7 +59,7 @@ export default function TechCard(props) {
               rotation={[-1.6, 0, 0]}
               text={props.skill}
               maxWidth={1}
-              font="public/font/SuperchargeLaser-9YZjj.otf"
+              font="/font/SuperchargeLaser-9YZjj.otf"
             />
             <Sparkles count={5} size={2} scale={10} speed={1} color="blue" />
             <Sparkles count={5} size={3} scale={10} speed={1} color="violet" />
