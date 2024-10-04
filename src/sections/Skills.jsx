@@ -42,7 +42,7 @@ export default function TechStack() {
               scale={1.2}
               ref={groupRef}
             >
-              <ScifiFan position={[0, 0, 1]} rotation={[-1.6, 0, 0]} />
+              {/* <ScifiFan position={[0, 0, 1]} rotation={[-1.6, 0, 0]} /> */}
 
               {techStack.map((tech, index) => {
                 const angle = (index / techStack.length) * Math.PI * 2; // Calculate based on techStack length
