@@ -34,7 +34,7 @@ export default function MacDraco({ link }) {
             rotation={[0, Math.PI, 0]}
             onClick={(e) => (e.stopPropagation(), setOpen(!open))}
           >
-            {/* <Mac
+            <Mac
               scale={1}
               position={
                 isMobile ? [5, -3, 10] : isTablet ? [4, -3, 10] : [0, -3, 0]
@@ -42,9 +42,9 @@ export default function MacDraco({ link }) {
               open={open}
               hinge={props.open.to([0, 1], [1.575, -0.425])}
               link={link}
-            /> */}
+            />
           </group>
-          {/* <Environment preset="dawn" /> */}
+          <Environment preset="dawn" />
         </Suspense>
         <ContactShadows
           position={[0, -4.5, 0]}
