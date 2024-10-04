@@ -82,7 +82,7 @@ export default function ProjectsList() {
                   }}
                 >
                   <img
-                    src="public/icon/icons8-arrow-96.png"
+                    src="/icon/icons8-arrow-96.png"
                     alt="leftArrow"
                     className="rotate-180 h-16"
                   />
@@ -113,7 +113,7 @@ export default function ProjectsList() {
                   }}
                 >
                   <img
-                    src="public/icon/icons8-arrow-96.png"
+                    src="/icon/icons8-arrow-96.png"
                     alt="leftArrow"
                     className="h-16"
                   />
