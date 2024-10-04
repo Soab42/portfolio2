@@ -52,14 +52,16 @@ export default function ProjectsList() {
               <div className="">
                 <p className="">Features</p>
                 {projects[project].features.map((feature) => (
-                  <li className="text-gray-500 pl-5">{feature}</li>
+                  <li key={feature} className="text-gray-500 pl-5">
+                    {feature}
+                  </li>
                 ))}
               </div>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex gap-4 ">
                 {projects[project].technology.map((tech) => (
-                  <div className="flex items-center gap-4">
+                  <div key={tech} className="flex items-center gap-4">
                     <img
                       src={getTech(tech)?.image}
                       alt="tech"

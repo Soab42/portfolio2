@@ -1,4 +1,9 @@
-import { OrbitControls, PerspectiveCamera, useGLTF } from "@react-three/drei";
+import {
+  OrbitControls,
+  PerspectiveCamera,
+  useGLTF,
+  useTexture,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef } from "react";
 import CanvasLoader from "../components/Loading";
@@ -9,6 +14,8 @@ import { techStack } from "../constants";
 export default function TechStack() {
   const groupRef = useRef(null);
   const model = useGLTF("/models/3d//low_poly_sci-fi_tablet.glb");
+  // const imageTexture = useTexture("/icon/backgroundDefault.jpg");
+
   return (
     <div className="relative  min-h-[100vh] h-full grid" id="skills">
       <div className="">
@@ -72,4 +79,5 @@ export default function TechStack() {
     </div>
   );
 }
+
 useGLTF.preload("/models/3d//low_poly_sci-fi_tablet.glb");

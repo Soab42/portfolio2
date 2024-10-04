@@ -6,13 +6,12 @@ Source: https://sketchfab.com/3d-models/low-poly-sci-fi-tablet-ee1fde7ec1514fd5a
 Title: Low Poly Sci-Fi Tablet
 */
 
-import React, { useRef } from "react";
-import { Sparkles, Text, useGLTF, useTexture } from "@react-three/drei";
+import { Sparkles, Text } from "@react-three/drei";
+import React from "react";
 import PlaneObject from "./PlaneObject";
 
 export default function TechCard(props) {
   const { nodes, materials } = props?.model;
-  const image = useTexture("/icon/backgroundDefault.jpg");
 
   return (
     <group {...props} dispose={null}>
@@ -24,13 +23,8 @@ export default function TechCard(props) {
             geometry={nodes.defaultMaterial.geometry}
             material={materials.MAT_TabletGlass}
           />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.defaultMaterial_1.geometry}
-            material={materials.MAT_OpacityText}
-          >
-            <meshBasicMaterial map={image} />
+          <mesh castShadow receiveShadow>
+            <meshBasicMaterial map={props?.imageTexture} />
             <PlaneObject
               args={[1, 1]}
               rotation={[-Math.PI / 2, 0, 0]}
