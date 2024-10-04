@@ -7,7 +7,7 @@ import React, { Suspense, useState } from "react";
 import useSize from "../hooks/useSize";
 import CanvasLoader from "./Loading";
 import Mac from "./Mac";
-export default function MacDraco({ link }) {
+export default function MacDraco({ link, model }) {
   // This flag controls open state, alternates between true & false
   const [open, setOpen] = useState(true);
   const { isMobile, isTablet } = useSize();
@@ -35,6 +35,7 @@ export default function MacDraco({ link }) {
             onClick={(e) => (e.stopPropagation(), setOpen(!open))}
           >
             <Mac
+              model={model}
               scale={1}
               position={
                 isMobile ? [5, -3, 10] : isTablet ? [4, -3, 10] : [0, -3, 0]

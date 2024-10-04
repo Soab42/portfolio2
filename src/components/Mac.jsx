@@ -6,13 +6,13 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import useSize from "../hooks/useSize";
 
-export default function Mac({ open, hinge, link, ...props }) {
+export default function Mac({ model, open, hinge, link, ...props }) {
   const { isMobile, isTablet } = useSize();
   const group = useRef();
   const modelRef = useRef();
   const linkRef = useRef();
   // Load model
-  const { nodes, materials } = useGLTF("/models/3d/mac_draco.glb");
+  const { nodes, materials } = model;
   // Take care of cursor state on hover
   const [hovered, setHovered] = useState(false);
   useEffect(
@@ -141,5 +141,3 @@ export default function Mac({ open, hinge, link, ...props }) {
     </group>
   );
 }
-
-useGLTF.preload("/models/3d/mac_draco.glb");

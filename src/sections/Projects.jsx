@@ -11,7 +11,7 @@ import CanvasLoader from "../components/Loading";
 export default function ProjectsList() {
   const [project, setProject] = useState(0);
   const parentRef = useRef(null); // Reference to the parent container
-  const { scene } = useGLTF("/models/3d/mac_draco.glb");
+  const model = useGLTF("/models/3d/mac_draco.glb");
   useEffect(() => {
     // Staggered animation for each child of the parent container
     gsap.fromTo(
@@ -123,18 +123,7 @@ export default function ProjectsList() {
           </div>
         </div>
         <div className="w-full xl:h-full h-1/2 order-1">
-          {/* <MacDraco link={projects[project]?.link} /> */}
-          <Canvas className="w-full h-full">
-            <Environment preset="dawn" />
-            <Suspense fallback={<CanvasLoader />}>
-              <primitive
-                object={scene}
-                scale={0.3}
-                rotation={[0.2, 0, 0]}
-                position={[0, 0, 0]}
-              />
-            </Suspense>
-          </Canvas>
+          <MacDraco link={projects[project]?.link} model={model} />
         </div>
       </div>
     </section>
