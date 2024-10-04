@@ -43,7 +43,7 @@ export default function TechStack() {
               ref={groupRef}
             >
               <ScifiFan position={[0, 0, 1]} rotation={[-1.6, 0, 0]} />
-              {/* 
+
               {techStack.map((tech, index) => {
                 const angle = (index / techStack.length) * Math.PI * 2; // Calculate based on techStack length
                 const radius = 2;
@@ -62,7 +62,7 @@ export default function TechStack() {
                     image={tech.image}
                   />
                 );
-              })} */}
+              })}
             </group>
           </Suspense>
         </Canvas>
