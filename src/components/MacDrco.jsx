@@ -1,16 +1,18 @@
 import { useSpring } from "@react-spring/core";
 import { a as three } from "@react-spring/three";
 import { a as web } from "@react-spring/web";
-import { ContactShadows, Environment } from "@react-three/drei";
+import { ContactShadows, Environment, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useState } from "react";
 import useSize from "../hooks/useSize";
 import CanvasLoader from "./Loading";
 import Mac from "./Mac";
-export default function MacDraco({ link, model }) {
+
+export default function MacDraco({ link }) {
   // This flag controls open state, alternates between true & false
   const [open, setOpen] = useState(true);
   const { isMobile, isTablet } = useSize();
+  const model = useGLTF("/models/3d/mac_draco.glb");
 
   // We turn this into a spring animation that interpolates between 0 and 1
   const props = useSpring({ open: Number(open) });
@@ -18,7 +20,7 @@ export default function MacDraco({ link, model }) {
     <web.main
       className="h-full"
       style={{
-        background: props.open.to([0, 1], ["#fff0", "rgba(14, 165, 233,.3)"]),
+        background: props.open.to([0, 1], ["#fff0", "rgba(14, 165, 230,.4)"]),
       }}
     >
       <Canvas dpr={[1, 2]} camera={{ position: [-10, 0, -30], fov: 35 }}>
@@ -58,3 +60,4 @@ export default function MacDraco({ link, model }) {
     </web.main>
   );
 }
+useGLTF.preload("/models/3d/mac_draco.glb");

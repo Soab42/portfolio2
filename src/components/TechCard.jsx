@@ -11,9 +11,7 @@ import { Sparkles, Text, useGLTF, useTexture } from "@react-three/drei";
 import PlaneObject from "./PlaneObject";
 
 export default function TechCard(props) {
-  const { nodes, materials } = useGLTF(
-    "/models/3d//low_poly_sci-fi_tablet.glb"
-  );
+  const { nodes, materials } = props?.model;
   const image = useTexture("/icon/backgroundDefault.jpg");
 
   return (
@@ -85,5 +83,3 @@ export default function TechCard(props) {
     </group>
   );
 }
-
-useGLTF.preload("/models/3d//low_poly_sci-fi_tablet.glb");

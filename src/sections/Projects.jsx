@@ -4,14 +4,9 @@ import { getTech, projects } from "../constants";
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import MacDraco from "../components/MacDrco";
-import { Canvas } from "@react-three/fiber";
-import { Environment, useGLTF } from "@react-three/drei";
-import { Suspense } from "react";
-import CanvasLoader from "../components/Loading";
 export default function ProjectsList() {
   const [project, setProject] = useState(0);
   const parentRef = useRef(null); // Reference to the parent container
-  const model = useGLTF("/models/3d/mac_draco.glb");
   useEffect(() => {
     // Staggered animation for each child of the parent container
     gsap.fromTo(
@@ -20,7 +15,7 @@ export default function ProjectsList() {
       {
         opacity: 1, // Final state (fully visible)
         y: 0, // Bring it back to the original position
-        stagger: 1.2, // Delay between the appearance of each child (0.2 seconds)
+        stagger: 1, // Delay between the appearance of each child (0.2 seconds)
         ease: "power3.inOut", // Smooth easing for the animation
         duration: 1.5, // Duration of each animation
       }
@@ -123,10 +118,9 @@ export default function ProjectsList() {
           </div>
         </div>
         <div className="w-full xl:h-full h-1/2 order-1">
-          <MacDraco link={projects[project]?.link} model={model} />
+          <MacDraco link={projects[project]?.link} />
         </div>
       </div>
     </section>
   );
 }
-useGLTF.preload("/models/3d/mac_draco.glb");
