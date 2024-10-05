@@ -41,6 +41,7 @@ export const techStack = [
     skill: "100%",
     image: "/icon/icons8-html5-512.png",
   },
+
   {
     title: "Css",
     description:
@@ -59,6 +60,13 @@ export const techStack = [
     title: "React",
     description:
       "React is a JavaScript library for building user interfaces. It is maintained by Meta and a community of developers.",
+    skill: "100%",
+    image: "icon/icons8-react-native-480.png",
+  },
+  {
+    title: "React Native",
+    description:
+      "React Native is a  javReact Native is a popular framework for building mobile applications using JavaScript and React",
     skill: "100%",
     image: "icon/icons8-react-native-480.png",
   },
@@ -123,6 +131,31 @@ export const techStack = [
     skill: "100%",
     image: "icon/three.png",
   },
+  {
+    title: "Auth.js",
+    description: "Auth.js is a JavaScript library for authentication.",
+    skill: "100%",
+    image: "icon/auth.webp",
+  },
+  {
+    title: "Redux",
+    description: "Redux is a JavaScript library for state management.",
+    skill: "100%",
+    image: "icon/icons8-redux-.png",
+  },
+  {
+    title: "Git",
+    description: "Git is a version control system.",
+    skill: "100%",
+    image: "icon/icons8-git-500.png",
+  },
+  {
+    title: "Firebase",
+    description:
+      "Firebase is a cloud platform for building mobile and web apps.",
+    skill: "100%",
+    image: "/icon/icons8-firebase.png",
+  },
 ];
 
 export function getTech(name) {
@@ -132,28 +165,107 @@ export function getTech(name) {
 }
 export const projects = [
   {
-    title: "Hotel loans",
+    title: "Company Landing Page",
     description:
-      "Hotel Management System with Admin Panel. Payment Gateway. User Dashboard. User Management. And More.Hotel Management System with Admin Panel. Payment Gateway. User Dashboard. User Management. And More.Hotel Management System with Admin Panel. Payment Gateway. User Dashboard. User Management. And More.",
+      "A Next.js landing page for a company. It includes various features for showcasing services and company information.",
     features: [
-      "Hotel Management System",
-      "Admin Panel",
-      "Payment Gateway",
-      "User Dashboard",
-      "User Management",
+      "Responsive Design",
+      "Fast Performance",
+      "SEO Optimized",
+      "Clean and Modern UI",
     ],
-    technology: ["React", "Tailwind", "Three.js"],
-    link: "https://hotelloans.vercel.app",
-    github: "https://github.com/soab42/hotelloans",
-    icon: "portfolio.png",
+    technology: ["Next.js", "Tailwind"],
+    link: "https://hotelloans.vercel.app/",
+    github: "https://github.com/Soab42/hotelloans",
   },
   {
-    title: "Portfolio",
-    description: "Portfolio",
-    features: ["Portfolio"],
-    technology: ["React", "Tailwind", "Three.js"],
-    link: "https://syfuddhin.netlify.app",
-    github: "https://github.com/soab42/portfolio",
-    icon: "portfolio.png",
+    title: "Accounting System",
+    description:
+      "A full-featured accounting system with user authentication. Includes data storage and management using MongoDB.",
+    features: [
+      "User Authentication",
+      "Financial Reports",
+      "Responsive Dashboard",
+      "Data Storage with MongoDB",
+    ],
+    technology: ["Next.js", "MongoDB", "Auth.js"],
+    link: "https://accountingsystem-xi.vercel.app/login?email=test@pmk-bd.org&password=test@123",
+    github: "https://github.com/Soab42/dmtechnology",
+  },
+  {
+    title: "Official Publication",
+    description:
+      "A platform for managing and publishing official notices and reports. Includes admin controls for managing content.",
+    features: [
+      "Firebase Authentication",
+      "Admin Control",
+      "Publication Management",
+      "Responsive Layout",
+    ],
+    technology: ["Next.js", "Firebase"],
+    link: "https://pmkbd.netlify.app/",
+    github: "https://github.com/Soab42/noticeBoard",
+  },
+  {
+    title: "Loan Calculator",
+    description:
+      "A web application that helps users calculate loan payments. Features include a passbook and a print-ready format.",
+    features: [
+      "Loan Payment Calculation",
+      "Passbook Integration",
+      "Print-ready Format",
+      "Redux State Management",
+    ],
+    technology: ["React", "Firebase", "Redux"],
+    link: "https://loancalcall.web.app/",
+    github: "https://github.com/Soab42/loancalcweb.git",
+  },
+  {
+    title: "Consumer Report",
+    description:
+      "A Laravel-based system for generating and managing consumer reports. It includes data entry and report generation features.",
+    features: [
+      "User Authentication",
+      "Data Entry Forms",
+      "Report Generation",
+      "Responsive UI",
+    ],
+    technology: ["Laravel", "MySQL"],
+    link: "https://consumer-laravel.000webhostapp.com",
+    github: "https://github.com/Soab42/pmkconsumer",
+  },
+  {
+    title: "Cash Counter",
+    description:
+      "An Android app for managing cash transactions. It provides features like passbook and cash counting.",
+    features: [
+      "Cash Counting",
+      "Passbook Feature",
+      "Android App",
+      "Flutter Development",
+    ],
+    technology: ["Flutter"],
+    imageLink: "/images/cashcounter-2.jpg",
+    link: "https://drive.usercontent.google.com/download?id=10q79dGic2hnlZ9csZRvpKRg_NMQk6U2R&export=download&authuser=0&confirm=t&uuid=2a152144-dad4-47d4-bfea-1caf0bc98009&at=APZUnTXx2nVhWlgsUzZEYvwiGUk6%3A1707279716981",
+    github: "https://github.com/Soab42/CashCounter-Flutter",
+    isMobile: true,
+    isFlutter: true,
+  },
+  {
+    title: "Loan Calculator Android App",
+    description:
+      "A React Native Android app for calculating loan payments. Offers a clean UI with an integrated calculator.",
+    features: [
+      "Loan Payment Calculation",
+      "React Native UI",
+      "Responsive Design",
+      "Mobile App Development",
+    ],
+    technology: ["React Native"],
+    imageLink: "/images/loancalc.jpg",
+    link: "https://drive.usercontent.google.com/download?id=1S7Ao1TtXQ7gtvEOJwxfdGxGSAgdJEFwJ&export=download&authuser=0&confirm=t&uuid=6684c790-1354-41cd-84f4-648d26a67d06&at=APZUnTXsWG_Zz4xkSZbhltyJYEJ8%3A1707279769391",
+    github: "https://github.com/Soab42/nativloancalc",
+    isMobile: true,
+    isFlutter: false,
   },
 ];

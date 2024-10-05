@@ -56,8 +56,9 @@ export default function Mac({ model, open, hinge, link, ...props }) {
       gsap.fromTo(
         group.current.rotation,
         { y: -5.5 },
-        { y: -0.04, ease: "power3.inOut", duration: 1.5 }
+        { ease: "power3.inOut", duration: 1.5 }
       );
+
       gsap.fromTo(
         linkRef.current,
         {

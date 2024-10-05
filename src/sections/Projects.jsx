@@ -4,6 +4,12 @@ import { getTech, projects } from "../constants";
 import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import MacDraco from "../components/MacDrco";
+import IphoneModel from "../components/IphoneDemo";
+import { Canvas } from "@react-three/fiber";
+import { Environment, OrbitControls } from "@react-three/drei";
+import { Suspense } from "react";
+import CanvasLoader from "../components/Loading";
+import SamsungModel from "../components/SamsungModel";
 export default function ProjectsList() {
   const [project, setProject] = useState(0);
   const parentRef = useRef(null); // Reference to the parent container
@@ -17,7 +23,7 @@ export default function ProjectsList() {
         y: 0, // Bring it back to the original position
         stagger: 1, // Delay between the appearance of each child (0.2 seconds)
         ease: "power3.inOut", // Smooth easing for the animation
-        duration: 1.5, // Duration of each animation
+        duration: 1, // Duration of each animation
       }
     );
   }, [project]); // Re-trigger the animation when the project changes
@@ -75,7 +81,10 @@ export default function ProjectsList() {
               <div className="flex justify-between items-center gap-4">
                 <button
                   onClick={() => {
-                    setProject(0);
+                    setProject(
+                      (project) =>
+                        (project - 1 + projects.length) % projects.length
+                    );
                   }}
                 >
                   <img
@@ -106,7 +115,7 @@ export default function ProjectsList() {
                 </div>
                 <button
                   onClick={() => {
-                    setProject(1);
+                    setProject((project) => (project + 1) % projects.length);
                   }}
                 >
                   <img
@@ -120,7 +129,31 @@ export default function ProjectsList() {
           </div>
         </div>
         <div className="w-full xl:h-full h-1/2 order-1">
-          <MacDraco link={projects[project]?.link} />
+          {projects[project]?.isMobile ? (
+            <Canvas className="bg-pink-400/20">
+              <Environment preset="dawn" />
+              <OrbitControls
+                enableZoom={true}
+                autoRotate={true}
+                autoRotateSpeed={5.5}
+                setPolarAngle={Math.PI / 2}
+              />
+              <Suspense fallback={<CanvasLoader />}>
+                {projects[project]?.isFlutter ? (
+                  <IphoneModel
+                    rotation={[0, -Math.PI / 2 - 0.2, 0]}
+                    position={[0, -1.5, 0]}
+                    scale={19.5}
+                    imageLink={projects[project]?.imageLink}
+                  />
+                ) : (
+                  <SamsungModel imageLink={projects[project]?.imageLink} />
+                )}
+              </Suspense>
+            </Canvas>
+          ) : (
+            <MacDraco link={projects[project]?.link} />
+          )}
         </div>
       </div>
     </section>

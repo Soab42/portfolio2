@@ -47,14 +47,14 @@ export default function TechStack() {
             <group
               rotation={[-4.5, 0, 0]}
               position={[0, 0, 0]}
-              scale={1.2}
+              scale={1.4}
               ref={groupRef}
             >
               <ScifiFan position={[0, 0, 1]} rotation={[-1.6, 0, 0]} />
 
               {techStack.map((tech, index) => {
                 const angle = (index / techStack.length) * Math.PI * 2; // Calculate based on techStack length
-                const radius = 2;
+                const radius = 2.5;
                 const x = Math.cos(angle) * radius;
                 const y = Math.sin(angle) * radius;
                 const z = 0;
