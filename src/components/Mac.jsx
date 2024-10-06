@@ -96,7 +96,7 @@ export default function Mac({ model, open, hinge, link, ...props }) {
             geometry={nodes["Cube008_1"].geometry}
           />
           <mesh
-            material={materials["screen.001"]}
+            // material={materials["screen.001"]}
             geometry={nodes["Cube008_2"].geometry}
           >
             <Html

@@ -20,7 +20,7 @@ export default function MacDraco({ link }) {
     <web.main
       className="h-full"
       style={{
-        background: props.open.to([0, 1], ["#fff0", "rgba(14, 165, 230,.4)"]),
+        background: props.open.to([0, 1], ["#fff0", "rgb(124 58 237 / 0.2)"]),
       }}
     >
       <Canvas dpr={[1, 2]} camera={{ position: [-10, 0, -30], fov: 35 }}>

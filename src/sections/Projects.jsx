@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from "react";
 import MacDraco from "../components/MacDrco";
 import IphoneModel from "../components/IphoneDemo";
 import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
+import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";
 import CanvasLoader from "../components/Loading";
 import SamsungModel from "../components/SamsungModel";
@@ -130,13 +130,17 @@ export default function ProjectsList() {
         </div>
         <div className="w-full xl:h-full h-1/2 order-1">
           {projects[project]?.isMobile ? (
-            <Canvas className="bg-pink-400/20">
+            <Canvas className="bg-violet-600/20">
               <Environment preset="dawn" />
               <OrbitControls
                 enableZoom={true}
                 autoRotate={true}
                 autoRotateSpeed={5.5}
-                setPolarAngle={Math.PI / 2}
+              />
+              <pointLight
+                position={[10, 10, 10]}
+                intensity={0}
+                color={"#d25578"}
               />
               <Suspense fallback={<CanvasLoader />}>
                 {projects[project]?.isFlutter ? (
@@ -147,9 +151,19 @@ export default function ProjectsList() {
                     imageLink={projects[project]?.imageLink}
                   />
                 ) : (
-                  <SamsungModel imageLink={projects[project]?.imageLink} />
+                  <SamsungModel
+                    imageLink={projects[project]?.imageLink}
+                    position={[0, -1.5, 0]}
+                  />
                 )}
               </Suspense>
+              <ContactShadows
+                position={[0, -2.5, 0]}
+                opacity={0.9}
+                scale={25}
+                blur={1}
+                far={2.5}
+              />
             </Canvas>
           ) : (
             <MacDraco link={projects[project]?.link} />

@@ -179,6 +179,34 @@ export const projects = [
     github: "https://github.com/Soab42/hotelloans",
   },
   {
+    title: "Utils.js",
+    description:
+      "A utility library for JavaScript. It includes various functions for handling various tasks.",
+    features: [
+      "Responsive Design",
+      "Fast Performance",
+      "SEO Optimized",
+      "Clean and Modern UI",
+    ],
+    technology: ["React", "Tailwind", "firebase"],
+    link: "https://utilsjs1.vercel.app/",
+    github: "https://github.com/Soab42/utilsjs",
+  },
+  {
+    title: "DevCafe",
+    description:
+      "A Next.js landing page for a company. It includes various features for showcasing services and company information.",
+    features: [
+      "Responsive Design",
+      "Fast Performance",
+      "SEO Optimized",
+      "Clean and Modern UI",
+    ],
+    technology: ["React", "Tailwind", "firebase"],
+    link: "https://devcafee.netlify.app/",
+    github: "https://github.com/Soab42/devCafe",
+  },
+  {
     title: "Accounting System",
     description:
       "A full-featured accounting system with user authentication. Includes data storage and management using MongoDB.",

@@ -13,6 +13,7 @@ import PlaneObject from "./PlaneObject";
 import { useEffect } from "react";
 import * as THREE from "three";
 import { useState } from "react";
+import gsap from "gsap";
 export default function IphoneModel(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
@@ -71,6 +72,20 @@ export default function IphoneModel(props) {
     }
   }, [imageTexture]);
 
+  useEffect(() => {
+    if (props.imageLink) {
+      gsap
+        .timeline({
+          ease: "power3.in",
+          duration: 0,
+        })
+        .fromTo(
+          group.current.rotation,
+          { y: -2.5, ease: "power3.out", duration: 1.5 },
+          { y: 0.8, ease: "power3.out", duration: 1.5 }
+        );
+    }
+  }, [props.imageLink]);
   // Handle hover event
   const handlePointerOver = () => setIsHovered(true);
   const handlePointerOut = () => setIsHovered(false);
