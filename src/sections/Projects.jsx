@@ -65,13 +65,13 @@ export default function ProjectsList() {
               </div>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="flex gap-4 ">
+              <div className="flex gap-4 mb-4 border-b border-dashed border-t border-teal-400 px-4 py-2 rounded-xl">
                 {projects[project].technology.map((tech) => (
                   <div key={tech} className="flex items-center gap-4">
                     <img
                       src={getTech(tech)?.image}
                       alt="tech"
-                      className="w-10"
+                      className="w-8"
                     />
                     <p className="text-gray-500">{getTech(tech)?.title}</p>
                   </div>
@@ -90,16 +90,22 @@ export default function ProjectsList() {
                   <img
                     src="/icon/icons8-arrow-96.png"
                     alt="leftArrow"
-                    className="rotate-180 h-16"
+                    className="rotate-180 h-12"
                   />
                 </button>
-                <div>
+                <div className="flex gap-4">
                   <a
                     href={projects[project].github}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <button className="text-white bg-violet-500 px-4 py-2 rounded-full">
+                    <button className="flex gap-2 text-teal-500 font-semibold ring-1 shadow-sm shadow-sky-600  px-4 py-2 rounded-full">
+                      <img
+                        width={25}
+                        src="/icon/icons8-git-500.png"
+                        alt="github"
+                        className="shadow-sky-600 shadow-md bg-sky-400 p-1 rounded-full"
+                      />{" "}
                       View Source
                     </button>
                   </a>
@@ -108,7 +114,9 @@ export default function ProjectsList() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <button className="text-white bg-violet-500 px-4 py-2 rounded-full">
+                    <button className="text-teal-500 px-4 font-semibold py-2 items-center rounded-full relative flex ring-1 shadow-sm shadow-sky-600">
+                      <span className="size-6 mr-2 animate-ping inline-block bg-red-500 rounded-full"></span>
+                      <span className="size-3.5 mr-2  inline-block bg-red-500 rounded-full absolute left-5 top-3.5"></span>
                       Go Live
                     </button>
                   </a>
@@ -121,7 +129,7 @@ export default function ProjectsList() {
                   <img
                     src="/icon/icons8-arrow-96.png"
                     alt="leftArrow"
-                    className="h-16"
+                    className="h-12"
                   />
                 </button>
               </div>
@@ -134,6 +142,7 @@ export default function ProjectsList() {
               <Environment preset="dawn" />
               <OrbitControls
                 enableZoom={true}
+                maxZoom={2.5}
                 autoRotate={true}
                 autoRotateSpeed={5.5}
               />

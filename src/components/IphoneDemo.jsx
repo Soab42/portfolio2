@@ -23,6 +23,7 @@ export default function IphoneModel(props) {
 
   const imageTexture = useTexture(props.imageLink);
   const { actions } = useAnimations(animations, group);
+
   // Add animation for the fish
   useLayoutEffect(() => {
     if (actions && Object.keys(actions).length > 0) {

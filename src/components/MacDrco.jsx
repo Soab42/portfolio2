@@ -1,7 +1,12 @@
 import { useSpring } from "@react-spring/core";
 import { a as three } from "@react-spring/three";
 import { a as web } from "@react-spring/web";
-import { ContactShadows, Environment, useGLTF } from "@react-three/drei";
+import {
+  ContactShadows,
+  Environment,
+  OrbitControls,
+  useGLTF,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useState } from "react";
 import useSize from "../hooks/useSize";
@@ -29,7 +34,13 @@ export default function MacDraco({ link }) {
           intensity={0}
           color={props.open.to([0, 1], ["#f0f0f0", "#d25578"])}
         />
-
+        <OrbitControls
+          enableRotate={false}
+          enablePan={false}
+          enableZoom={true}
+          maxZoom={0.01}
+          minZoom={0.01}
+        />
         {/* <OrbitControls /> */}
         <Suspense fallback={<CanvasLoader />}>
           <group
