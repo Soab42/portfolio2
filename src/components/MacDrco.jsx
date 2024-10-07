@@ -4,6 +4,7 @@ import { a as web } from "@react-spring/web";
 import {
   ContactShadows,
   Environment,
+  Float,
   OrbitControls,
   useGLTF,
 } from "@react-three/drei";
@@ -43,21 +44,23 @@ export default function MacDraco({ link }) {
         />
         {/* <OrbitControls /> */}
         <Suspense fallback={<CanvasLoader />}>
-          <group
-            rotation={[0, Math.PI, 0]}
-            onClick={(e) => (e.stopPropagation(), setOpen(!open))}
-          >
-            <Mac
-              model={model}
-              scale={1}
-              position={
-                isMobile ? [5, -3, 10] : isTablet ? [4, -3, 10] : [0, -3, 0]
-              }
-              open={open}
-              hinge={props.open.to([0, 1], [1.575, -0.425])}
-              link={link}
-            />
-          </group>
+          <Float speed={4} rotationIntensity={0.1} floatIntensity={0.1}>
+            <group
+              rotation={[0, Math.PI, 0]}
+              onClick={(e) => (e.stopPropagation(), setOpen(!open))}
+            >
+              <Mac
+                model={model}
+                scale={1}
+                position={
+                  isMobile ? [5, -3, 10] : isTablet ? [4, -3, 10] : [0, -3, 0]
+                }
+                open={open}
+                hinge={props.open.to([0, 1], [1.575, -0.425])}
+                link={link}
+              />
+            </group>
+          </Float>
         </Suspense>
         <Environment preset="dawn" />
         <ContactShadows

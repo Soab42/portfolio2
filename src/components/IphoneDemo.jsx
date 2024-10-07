@@ -83,7 +83,7 @@ export default function IphoneModel(props) {
         .fromTo(
           group.current.rotation,
           { y: -2.5, ease: "power3.out", duration: 1.5 },
-          { y: 0.8, ease: "power3.out", duration: 1.5 }
+          { y: -1.7, ease: "power3.out", duration: 1.5 }
         );
     }
   }, [props.imageLink]);

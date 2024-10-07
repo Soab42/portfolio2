@@ -5,10 +5,10 @@ License: CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 Source: https://sketchfab.com/3d-models/robot-playground-59fc99d8dcb146f3a6c16dbbcc4680da
 Title: Robot Playground
 */
-
-import React, { useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
-import { useLayoutEffect } from "react";
+import { useAnimations, useGLTF } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { easing } from "maath";
+import React, { useLayoutEffect, useRef } from "react";
 
 export default function RoboticsPlayground(props) {
   const group = useRef();
@@ -16,6 +16,7 @@ export default function RoboticsPlayground(props) {
     "/models/3d/robotic_playgroud.glb"
   );
   const { actions } = useAnimations(animations, group);
+  const camera = useThree((state) => state.camera);
   // Add animation for the fish
   useLayoutEffect(() => {
     // Check if there are any animations
@@ -39,6 +40,19 @@ export default function RoboticsPlayground(props) {
       console.log("No animations found in the model");
     }
   }, [actions]);
+
+  useFrame((state, delta) => {
+    easing.damp3(state.camera.position, [0, 0, 30], 0.25, delta);
+
+    if (!props.isMobile) {
+      easing.dampE(
+        group.current.rotation,
+        [-state.pointer.y / 3, state.pointer.x / 5, 0],
+        0.25,
+        delta
+      );
+    }
+  });
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">

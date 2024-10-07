@@ -102,6 +102,7 @@ export default function Intro() {
             <RoboticsPlayground
               scale={isMobile ? 4 : 6}
               position={isMobile ? [0, -5, 0] : [0, -8, 0]}
+              isMobile={isMobile}
             />
           </Suspense>
         </Canvas>

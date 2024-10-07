@@ -158,11 +158,6 @@ export const techStack = [
   },
 ];
 
-export function getTech(name) {
-  return techStack.find(
-    (skill) => skill.title.toLowerCase() == name.toLowerCase()
-  );
-}
 export const projects = [
   {
     title: "Company Landing Page",
@@ -297,3 +292,48 @@ export const projects = [
     isFlutter: false,
   },
 ];
+
+export const educations = [
+  {
+    title: "Bachelor Of Business Studies",
+    name: "BBS",
+    institution: "National University",
+    duration: "2015 - 2017  (3 Years)",
+    group: "Commerce",
+    link: "/certificate/IMG_20220713_145127.jpg",
+    certificate: "/certificate/IMG_20220713_145127.jpg",
+  },
+  {
+    title: "Higher Secondary School Certificate",
+    name: "HSC",
+    institution: "Khoksa Janipur Pilot High School",
+    duration: "2010 - 2012 (2 Years)",
+    group: "Science",
+    link: "/certificate/image2.png",
+    certificate: "/certificate/image2.png",
+  },
+  {
+    title: "Reactive Accelarator(React-Next)",
+    name: "React-Next",
+    institution: "Learn with Sumit (LWS)",
+    duration: "2024 (4 Months)",
+    group: "Information Technology",
+    link: "https://learnwithsumit.com/certificates/verify/LWSCTXN-2TAK8DOG",
+    certificate: "/certificate/Certificate-LWSCTXN-2TAK8DOG-rnext-batch-1.jpeg",
+  },
+  {
+    title: "Think in a Redux way",
+    name: "Redux",
+    institution: "Learn with Sumit (LWS)",
+    duration: "2023 (3 Months)",
+    group: "Information Technology",
+    link: "https://learnwithsumit.com/certificates/verify/LWSCTXN-7CX7WS0E",
+    certificate: "/certificate/LWS-Certificate.jpg",
+  },
+];
+
+export function getTech(name) {
+  return techStack.find(
+    (skill) => skill.title.toLowerCase() == name.toLowerCase()
+  );
+}

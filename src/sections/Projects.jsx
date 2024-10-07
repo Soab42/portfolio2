@@ -1,14 +1,19 @@
 import { useState } from "react";
 import { getTech, projects } from "../constants";
 
-import { gsap } from "gsap";
-import React, { useEffect, useRef } from "react";
-import MacDraco from "../components/MacDrco";
-import IphoneModel from "../components/IphoneDemo";
+import {
+  ContactShadows,
+  Environment,
+  Float,
+  OrbitControls,
+  SpotLight,
+} from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
-import { Suspense } from "react";
+import { gsap } from "gsap";
+import React, { Suspense, useEffect, useRef } from "react";
+import IphoneModel from "../components/IphoneDemo";
 import CanvasLoader from "../components/Loading";
+import MacDraco from "../components/MacDrco";
 import SamsungModel from "../components/SamsungModel";
 export default function ProjectsList() {
   const [project, setProject] = useState(0);
@@ -140,32 +145,23 @@ export default function ProjectsList() {
           {projects[project]?.isMobile ? (
             <Canvas className="bg-violet-600/20">
               <Environment preset="dawn" />
-              <OrbitControls
-                enableZoom={true}
-                maxZoom={2.5}
-                autoRotate={true}
-                autoRotateSpeed={5.5}
-              />
-              <pointLight
-                position={[10, 10, 10]}
-                intensity={0}
-                color={"#d25578"}
-              />
-              <Suspense fallback={<CanvasLoader />}>
-                {projects[project]?.isFlutter ? (
-                  <IphoneModel
-                    rotation={[0, -Math.PI / 2 - 0.2, 0]}
-                    position={[0, -1.5, 0]}
-                    scale={19.5}
-                    imageLink={projects[project]?.imageLink}
-                  />
-                ) : (
-                  <SamsungModel
-                    imageLink={projects[project]?.imageLink}
-                    position={[0, -1.5, 0]}
-                  />
-                )}
-              </Suspense>
+              <OrbitControls enableZoom={true} maxZoom={2.5} />
+              <Float speed={4} rotationIntensity={1} floatIntensity={1}>
+                <Suspense fallback={<CanvasLoader />}>
+                  {projects[project]?.isFlutter ? (
+                    <IphoneModel
+                      position={[0, -1.5, 0]}
+                      scale={19.5}
+                      imageLink={projects[project]?.imageLink}
+                    />
+                  ) : (
+                    <SamsungModel
+                      imageLink={projects[project]?.imageLink}
+                      position={[1, -1.5, 0]}
+                    />
+                  )}
+                </Suspense>
+              </Float>
               <ContactShadows
                 position={[0, -2.5, 0]}
                 opacity={0.9}

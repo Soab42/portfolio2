@@ -61,10 +61,9 @@ export default function TechCard(props) {
               maxWidth={1}
               font="/font/SuperchargeLaser-9YZjj.otf"
             />
-            <Sparkles count={5} size={2} scale={10} speed={1} color="blue" />
-            <Sparkles count={5} size={3} scale={10} speed={1} color="violet" />
-            <Sparkles count={5} size={1} scale={10} speed={1} color="pink" />
-            <Sparkles count={5} size={4} scale={10} speed={1} color="yellow" />
+            <Sparkles count={5} size={5} scale={10} speed={1} color="blue" />
+            <Sparkles count={5} size={4} scale={10} speed={1} color="skyblue" />
+            <Sparkles count={5} size={2} scale={10} speed={1} color="violet" />
           </mesh>
           <mesh
             castShadow
