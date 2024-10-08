@@ -9,18 +9,9 @@ import { useLayoutEffect } from "react";
 export default function Dev(props) {
   const group = useRef();
   const { nodes, materials } = useGLTF(
-    "/models/3d/animation/66f66417097c6f5e793c1b24(1).glb"
+    "/models/3d/66f66417097c6f5e793c1b24.glb"
   );
-  const { animations: idleAnimation } = useFBX(
-    "/models/3d/animation/Button Pushing.fbx"
-  );
-  idleAnimation[0].name = "idle";
-  const { actions } = useAnimations(idleAnimation, group);
 
-  useLayoutEffect(() => {
-    actions["idle"].reset().fadeIn(0.5).play();
-    return () => actions["idle"].fadeOut(0.5);
-  }, [actions]);
   return (
     <>
       <SpotLight
@@ -121,4 +112,4 @@ export default function Dev(props) {
   );
 }
 
-useGLTF.preload("/models/3d/animation/66f66417097c6f5e793c1b24(1).glb");
+useGLTF.preload("/models/3d/66f66417097c6f5e793c1b24.glb");
