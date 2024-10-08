@@ -169,6 +169,7 @@ export const projects = [
       "SEO Optimized",
       "Clean and Modern UI",
     ],
+    learnings: ["SEO Optimized", "Clean and Modern UI", "Fast Performance"],
     technology: ["Next.js", "Tailwind"],
     link: "https://hotelloans.vercel.app/",
     github: "https://github.com/Soab42/hotelloans",
@@ -183,6 +184,7 @@ export const projects = [
       "SEO Optimized",
       "Clean and Modern UI",
     ],
+    learnings: ["SEO Optimized", "Clean and Modern UI", "Fast Performance"],
     technology: ["React", "Tailwind", "firebase"],
     link: "https://utilsjs1.vercel.app/",
     github: "https://github.com/Soab42/utilsjs",
@@ -197,6 +199,7 @@ export const projects = [
       "SEO Optimized",
       "Clean and Modern UI",
     ],
+    learnings: ["SEO Optimized", "Clean and Modern UI", "Fast Performance"],
     technology: ["React", "Tailwind", "firebase"],
     link: "https://devcafee.netlify.app/",
     github: "https://github.com/Soab42/devCafe",
@@ -206,6 +209,12 @@ export const projects = [
     description:
       "A full-featured accounting system with user authentication. Includes data storage and management using MongoDB.",
     features: [
+      "User Authentication",
+      "Financial Reports",
+      "Responsive Dashboard",
+      "Data Storage with MongoDB",
+    ],
+    learnings: [
       "User Authentication",
       "Financial Reports",
       "Responsive Dashboard",
@@ -225,6 +234,12 @@ export const projects = [
       "Publication Management",
       "Responsive Layout",
     ],
+    learnings: [
+      "Firebase Authentication",
+      "Admin Control",
+      "Publication Management",
+      "Responsive Layout",
+    ],
     technology: ["Next.js", "Firebase"],
     link: "https://pmkbd.netlify.app/",
     github: "https://github.com/Soab42/noticeBoard",
@@ -234,6 +249,12 @@ export const projects = [
     description:
       "A web application that helps users calculate loan payments. Features include a passbook and a print-ready format.",
     features: [
+      "Loan Payment Calculation",
+      "Passbook Integration",
+      "Print-ready Format",
+      "Redux State Management",
+    ],
+    learnings: [
       "Loan Payment Calculation",
       "Passbook Integration",
       "Print-ready Format",
@@ -253,6 +274,12 @@ export const projects = [
       "Report Generation",
       "Responsive UI",
     ],
+    learnings: [
+      "User Authentication",
+      "Data Entry Forms",
+      "Report Generation",
+      "Responsive UI",
+    ],
     technology: ["Laravel", "MySQL"],
     link: "https://consumer-laravel.000webhostapp.com",
     github: "https://github.com/Soab42/pmkconsumer",
@@ -262,6 +289,12 @@ export const projects = [
     description:
       "An Android app for managing cash transactions. It provides features like passbook and cash counting.",
     features: [
+      "Cash Counting",
+      "Passbook Feature",
+      "Android App",
+      "Flutter Development",
+    ],
+    learnings: [
       "Cash Counting",
       "Passbook Feature",
       "Android App",
@@ -284,6 +317,12 @@ export const projects = [
       "Responsive Design",
       "Mobile App Development",
     ],
+    learnings: [
+      "Loan Payment Calculation",
+      "React Native UI",
+      "Responsive Design",
+      "Mobile App Development",
+    ],
     technology: ["React Native"],
     imageLink: "/images/loancalc.jpg",
     link: "https://drive.usercontent.google.com/download?id=1S7Ao1TtXQ7gtvEOJwxfdGxGSAgdJEFwJ&export=download&authuser=0&confirm=t&uuid=6684c790-1354-41cd-84f4-648d26a67d06&at=APZUnTXsWG_Zz4xkSZbhltyJYEJ8%3A1707279769391",
@@ -296,7 +335,7 @@ export const projects = [
 export const educations = [
   {
     title: "Bachelor Of Business Studies",
-    name: "BBS",
+    name: "Honours",
     institution: "National University",
     duration: "2015 - 2017  (3 Years)",
     group: "Commerce",

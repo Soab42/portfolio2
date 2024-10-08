@@ -18,6 +18,7 @@ import SamsungModel from "../components/SamsungModel";
 export default function ProjectsList() {
   const [project, setProject] = useState(0);
   const parentRef = useRef(null); // Reference to the parent container
+  const parentRef2 = useRef(null); // Reference to the parent container
   useEffect(() => {
     // Staggered animation for each child of the parent container
     gsap.fromTo(
@@ -26,9 +27,21 @@ export default function ProjectsList() {
       {
         opacity: 1, // Final state (fully visible)
         y: 0, // Bring it back to the original position
-        stagger: 1, // Delay between the appearance of each child (0.2 seconds)
-        ease: "power3.inOut", // Smooth easing for the animation
-        duration: 1, // Duration of each animation
+        stagger: 0.2, // Delay between the appearance of each child (0.2 seconds)
+        ease: "linear", // Smooth easing for the animation
+        duration: 0.3, // Duration of each animation
+      }
+    );
+
+    gsap.fromTo(
+      parentRef2.current.children,
+      { opacity: 0, x: 50 }, // Initial state (hidden and slightly below)
+      {
+        opacity: 1, // Final state (fully visible)
+        x: 0, // Bring it back to the original position
+        stagger: 0.3, // Delay between the appearance of each child (0.2 seconds)
+        ease: "linear", // Smooth easing for the animation
+        duration: 0.3, // Duration of each animation
       }
     );
   }, [project]); // Re-trigger the animation when the project changes
@@ -45,24 +58,31 @@ export default function ProjectsList() {
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-1">
         <div className="flex items-center justify-center mt-12">
           <h1 className="text-white text-4xl font-bold relative">
-            <span className="size-6 mr-3 animate-ping inline-block bg-sky-500 rounded-full absolute -left-8 top-3"></span>
-            <span className="size-4 mr-3  inline-block bg-sky-500 rounded-full absolute -left-7 top-4"></span>
-            Portfolio <span className="text-sky-300">that enlightens</span>
+            <span className="size-6 mr-3 animate-ping inline-block bg-emerald-500 rounded-full absolute -left-8 top-3"></span>
+            <span className="size-4 mr-3  inline-block bg-emerald-500 rounded-full absolute -left-7 top-4"></span>
+            Portfolio <span className="text-emerald-500">that enlightens</span>
           </h1>
         </div>
       </div>
       <div className="main w-full flex flex-col xl:flex-row  items-center justify-between absolute inset-0 p-4 mt-24">
-        <div className="w-full h-1/2 xl:h-full p-4  xl:order-1 order-2">
-          <div
-            className="w-full h-full flex flex-col  justify-between gap-4"
-            ref={parentRef}
-          >
-            <div className="flex flex-col gap-4">
-              <h1>{projects[project].title}</h1>
+        <div className="w-full h-1/2 xl:h-full p-4  xl:order-1 order-2 text-lg">
+          <div className="w-full h-full flex flex-col  justify-between gap-4">
+            <div className="flex flex-col gap-4" ref={parentRef}>
+              <h1 className="text-3xl text-emerald-400 font-semibold">
+                {projects[project].title}
+              </h1>
               <p>{projects[project].description}</p>
               <div className="">
-                <p className="">Features</p>
+                <p className="text-emerald-400 text-xl">Features</p>
                 {projects[project].features.map((feature) => (
+                  <li key={feature} className="text-gray-500 pl-5">
+                    {feature}
+                  </li>
+                ))}
+              </div>
+              <div className="">
+                <p className="text-emerald-400 text-xl">Learnings</p>
+                {projects[project]?.learnings?.map((feature) => (
                   <li key={feature} className="text-gray-500 pl-5">
                     {feature}
                   </li>
@@ -70,7 +90,10 @@ export default function ProjectsList() {
               </div>
             </div>
             <div className="flex flex-col gap-4">
-              <div className="flex gap-4 mb-4 border-b border-dashed border-t border-teal-400 px-4 py-2 rounded-xl">
+              <div
+                ref={parentRef2}
+                className="flex gap-4 mb-4 border-b border-dashed border-t border-teal-400 px-4 py-2 rounded-xl"
+              >
                 {projects[project].technology.map((tech) => (
                   <div key={tech} className="flex items-center gap-4">
                     <img

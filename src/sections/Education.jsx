@@ -63,9 +63,9 @@ export default function Education() {
           );
           background-size: 800%;
           border-radius: 8px;
-          filter: blur(6px);
+          filter: blur(4px);
           animation: glowing 40s linear infinite;
-          opacity: 1;
+          opacity: 0.5;
           transition: background-position 2s cubic-bezier(0.075, 0.82, 0.165, 1);
           z-index: -1;
         }
