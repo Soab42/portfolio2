@@ -1,6 +1,11 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import Dev from "../components/Dev";
-import { Environment, OrbitControls, SpotLight } from "@react-three/drei";
+import {
+  Environment,
+  OrbitControls,
+  PresentationControls,
+  SpotLight,
+} from "@react-three/drei";
 
 export default function About() {
   return (
@@ -13,21 +18,29 @@ export default function About() {
           <span className="text-cyan-500"> Myself</span>
         </h1>
       </div>
-      <div className="about flex flex-col xl:flex-row justify-between items-center relative h-full">
+      <div className="about flex flex-col xl:flex-row justify-center items-center relative h-full">
         <div className="image xl:h-[70vh] xl:w-[30vw]">
           <Canvas className="w-full h-full">
             <ambientLight />
-            <OrbitControls enableZoom={false} />
+            {/* <OrbitControls enableZoom={false} /> */}
             <ambientLight intensity={2} />
-
-            <Dev scale={3} position={[0, -2.5, 0]} />
+            <PresentationControls
+              global
+              config={{ mass: 2, tension: 500 }}
+              snap={{ mass: 4, tension: 1500 }}
+              rotation={[0.2, 0.3, 0]}
+              polar={[-Math.PI / 3, Math.PI / 3]}
+              azimuth={[-Math.PI / 1.4, Math.PI / 2]}
+            >
+              <Dev scale={3} position={[0, -2.5, 0]} />
+            </PresentationControls>
           </Canvas>
         </div>
         <div className="text p-10 text-justify w-1/2">
           <h1 className="text-3xl  font-bold bg-gradient-to-r from-cyan-500 from-10% via-violet-500 via-50% to-violet-100 text-transparent bg-clip-text">
             Soab Mahmud Syfuddhin
           </h1>
-          <h1 className="text-xl text-gray-600 font-bold">
+          <h1 className="text-md text-gray-600 font-bold">
             Web Application Developer
           </h1>
           <p className="text-gray-400 mt-5 text-xl bg-gradient-to-br from-cyan-500 from-10%  to-violet-400 text-transparent bg-clip-text">
