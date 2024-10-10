@@ -36,14 +36,14 @@ export default function About() {
             </PresentationControls>
           </Canvas>
         </div>
-        <div className="text p-10 text-justify w-1/2">
-          <h1 className="text-3xl  font-bold bg-gradient-to-r from-cyan-500 from-10% via-violet-500 via-50% to-violet-100 text-transparent bg-clip-text">
+        <div className="text p-10 text-justify xl:w-1/2">
+          <h1 className="text-2xl  font-bold bg-gradient-to-r from-cyan-500 from-10% via-violet-500 via-50% to-violet-100 text-transparent bg-clip-text">
             Soab Mahmud Syfuddhin
           </h1>
-          <h1 className="text-md text-gray-600 font-bold">
+          <h1 className="text-lg text-gray-600 font-bold">
             Web Application Developer
           </h1>
-          <p className="text-gray-400 mt-5 text-xl bg-gradient-to-br from-cyan-500 from-10%  to-violet-400 text-transparent bg-clip-text">
+          <p className="text-gray-400 mt-5 text-md bg-gradient-to-br from-cyan-500 from-10%  to-violet-400 text-transparent bg-clip-text">
             I am a dedicated{" "}
             <span className="marker">web application developer</span> with a
             passion for creating digital experiences that leave a mark Beyond
@@ -65,11 +65,75 @@ export default function About() {
             skills and exploring the ever-evolving world of web development.
             Every day is a chance to grow and innovate.
           </p>
-          <button className="educationCard mt-6 bg-clip-text tracking-widest  font-black  uppercase ">
+          <button className="download mt-10  tracking-widest uppercase text-sm">
             download cv
           </button>
         </div>
       </div>
+      <style jsx>
+        {`
+          @property --angle {
+            syntax: "<angle>";
+            inherits: false;
+            initial-value: 0deg;
+          }
+
+          .download {
+            height: 50px;
+            width: 200px;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: 0.5s;
+            cursor: pointer;
+            position: relative;
+            background: black;
+            display: flex;
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+          }
+          .download:before,
+          .download:after {
+            content: "";
+            position: absolute;
+            width: 104%;
+            height: 110%;
+            border-radius: inherit;
+            background-image: conic-gradient(
+              from var(--angle),
+              #002bff,
+              #7a00ff,
+              #ff00c8,
+              aqua
+            );
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: -1;
+            animation: rotate 4s linear infinite;
+          }
+          .download:after {
+            filter: blur(14px);
+          }
+
+          .download:hover:before,
+          .download:hover:after {
+            animation-play-state: paused;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          }
+          .download:hover {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          }
+          @keyframes rotate {
+            0% {
+              --angle: 0deg;
+            }
+            100% {
+              --angle: 360deg;
+            }
+          }
+        `}
+      </style>
     </section>
   );
 }

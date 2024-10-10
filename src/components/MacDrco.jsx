@@ -30,7 +30,7 @@ export default function MacDraco({ link }) {
       }}
     >
       <Canvas dpr={[1, 2]} camera={{ position: [-10, 0, -30], fov: 35 }}>
-        <three.pointLight
+        <pointLight
           position={[10, 10, 10]}
           intensity={0}
           color={props.open.to([0, 1], ["#f0f0f0", "#d25578"])}

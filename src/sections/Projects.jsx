@@ -58,9 +58,9 @@ export default function ProjectsList() {
       <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-1">
         <div className="flex items-center justify-center mt-12">
           <h1 className="text-white text-4xl font-bold relative">
-            <span className="size-6 mr-3 animate-ping inline-block bg-emerald-500 rounded-full absolute -left-8 top-3"></span>
-            <span className="size-4 mr-3  inline-block bg-emerald-500 rounded-full absolute -left-7 top-4"></span>
-            Portfolio <span className="text-emerald-500">that enlightens</span>
+            <span className="size-6 mr-3 animate-ping inline-block bg-teal-500 rounded-full absolute -left-8 top-3"></span>
+            <span className="size-4 mr-3  inline-block bg-teal-500 rounded-full absolute -left-7 top-4"></span>
+            Portfolio <span className="text-teal-500">that enlightens</span>
           </h1>
         </div>
       </div>
@@ -68,12 +68,12 @@ export default function ProjectsList() {
         <div className="w-full h-1/2 xl:h-full p-4  xl:order-1 order-2 text-lg">
           <div className="w-full h-full flex flex-col  justify-between gap-4">
             <div className="flex flex-col gap-4" ref={parentRef}>
-              <h1 className="text-3xl text-emerald-400 font-semibold">
+              <h1 className="text-3xl text-teal-400 font-semibold">
                 {projects[project].title}
               </h1>
               <p>{projects[project].description}</p>
               <div className="">
-                <p className="text-emerald-400 text-xl">Features</p>
+                <p className="text-teal-400 text-xl">Features</p>
                 {projects[project].features.map((feature) => (
                   <li key={feature} className="text-gray-500 pl-5">
                     {feature}
@@ -81,7 +81,7 @@ export default function ProjectsList() {
                 ))}
               </div>
               <div className="">
-                <p className="text-emerald-400 text-xl">Learnings</p>
+                <p className="text-teal-400 text-xl">Learnings</p>
                 {projects[project]?.learnings?.map((feature) => (
                   <li key={feature} className="text-gray-500 pl-5">
                     {feature}

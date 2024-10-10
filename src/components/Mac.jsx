@@ -101,7 +101,7 @@ export default function Mac({ model, open, hinge, link, ...props }) {
           >
             <Html
               position={
-                isMobile ? [0, 0, 0] : isTablet ? [0, 0, 0] : [-0.5, 0, -0.1]
+                isMobile ? [0, 0, 0] : isTablet ? [0, 0, 0] : [-0.3, 0.5, -0.1]
               } // Adjust the position to fit your screen
               rotation={[-Math.PI / 2, 0, 0]} // Ensure it is correctly aligned with the screen
               transform // Make sure it follows the 3D transform
@@ -113,7 +113,7 @@ export default function Mac({ model, open, hinge, link, ...props }) {
                 ref={linkRef}
                 hidden={!open} // Show or hide the iframe
                 src={link} // Website URL passed as the `link` prop
-                style={{ width: "1300px", height: "840px", border: "none" }} // Adjust the size
+                style={{ width: "1260px", height: "820px", border: "none" }} // Adjust the size
               />
             </Html>
           </mesh>

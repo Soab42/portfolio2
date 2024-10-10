@@ -5,6 +5,7 @@ import Intro from "./sections/Intro.jsx";
 import Projects from "./sections/Projects.jsx";
 import TechStack from "./sections/Skills.jsx";
 import About from "./sections/About.jsx";
+
 const App = () => {
   return (
     <Router>
