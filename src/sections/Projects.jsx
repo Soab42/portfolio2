@@ -98,7 +98,7 @@ export default function ProjectsList() {
                   <div key={tech} className="flex items-center gap-4">
                     <img
                       src={getTech(tech)?.image}
-                      alt="tech"
+                      alt={getTech(tech)?.image}
                       className="w-8"
                     />
                     <p className="text-gray-500">{getTech(tech)?.title}</p>
